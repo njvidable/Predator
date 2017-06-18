@@ -31,7 +31,7 @@ def run(images_path, images_names, area_ratio, threshold_value,\
         255, mode, area_ratio)
     error, msg, thresh, dots = finder.find(images_path, images_names)
     if error:
-        return 1, msg, cv2.imread("./resources/error_img.png")
+        return 1, msg, cv2.imread("./app/resources/error_img.png")
     center = (thresh.shape[1]/2, thresh.shape[0]/2)
     hunter = trinity_hunter_rev.Trinity_hunter_rev(hunt_radius)
     filtered_points = hunter.hunt(center, [x[0] for x in dots]) 
